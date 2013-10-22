@@ -23,5 +23,5 @@ void main(void)
 	float aog = 3.2;
 
 
-	cout << Bernoulli.BernoulliHeadLess(elv,pres,vel,den,aog) << endl;
+	cout << Bernoulli.BernoulliHeadLoss(elv,pres,vel,den,aog) << endl;
 }
