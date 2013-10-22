@@ -47,8 +47,8 @@ float BaseEQ::BernoulliPressure(glm::vec2 elevation, glm::vec2 pressure, glm::ve
 Bernoulli Equation to solve for velocity at point 1:
 Velocity 1 =  Square Root (2 * Acceleration of gravity * ((Position 2 - Position 1)	+	(Velocity1^2 - Velocity2^2m)/(2 * Acceleration of Gravity) + (Velocity 2 ^2) / (2 * Acceleration of Gravity) + Headloss																												
 */
-float BaseEQ::BernoulliVelocity(glm::vec2 elevation, glm::vec2 pressure, glm::vec2 velocity, float density, float aOG,float headloss)
+double BaseEQ::BernoulliVelocity(glm::vec2 elevation, glm::vec2 pressure, glm::vec2 velocity, float density, float aOG,float headloss)
 {
-	velocity.x = glm::sqrt(2 * aOG * (elevation.y - elevation .x +  ((pressure.y - pressure.x)/ density * aOG) + (pow(velocity.y,2) + (pow(velocity.y,2)/(2 * aOG)) + headloss)));
+	velocity.x = sqrt(2 * aOG * (elevation.y - elevation .x +  ((pressure.y - pressure.x)/ density * aOG) + (pow(velocity.y,2)/(2 * aOG)) + headloss));
 	return velocity.x;
 }

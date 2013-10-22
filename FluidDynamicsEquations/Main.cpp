@@ -30,5 +30,7 @@ void main(void)
 	Bernoulli.pressure.x = Bernoulli.BernoulliPressure(Bernoulli.elevation,Bernoulli.pressure,Bernoulli.velocity,Bernoulli.density,Bernoulli.aOG,Bernoulli.headLoss);
 	cout << Bernoulli.pressure.x << endl;
 
+	Bernoulli.velocity.x = Bernoulli.BernoulliVelocity(Bernoulli.elevation,Bernoulli.pressure,Bernoulli.velocity,Bernoulli.density,Bernoulli.aOG,Bernoulli.headLoss);
+	cout << Bernoulli.velocity.x << endl;
 
 }
