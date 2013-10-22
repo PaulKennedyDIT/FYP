@@ -7,21 +7,28 @@ using namespace std;
 void main(void)
 {
 	BaseEQ Bernoulli;
-	glm::vec2 elv;
-	elv.x = 2.0;
-	elv.y = 4.0;
+	Bernoulli.elevation.x = 2.0;
+	Bernoulli.elevation.y = 4.0;
 
-	glm::vec2 pres;
-	pres.x = 92.1;
-	pres.y = 82.3;
+	Bernoulli.pressure.x = 92.1;
+	Bernoulli.pressure.y = 82.3;
 
-	glm::vec2 vel;
-	vel.x = 2.3;
-	vel.y = 3.4;
+	
+	Bernoulli.velocity.x = 2.3;
+	Bernoulli.velocity.y = 3.4;
 
-	float den = 9.2;
-	float aog = 3.2;
+	Bernoulli.density = 9.2;
+	Bernoulli.aOG = 3.2;
 
 
-	cout << Bernoulli.BernoulliHeadLoss(elv,pres,vel,den,aog) << endl;
+	Bernoulli.headLoss = Bernoulli.BernoulliHeadLoss(Bernoulli.elevation,Bernoulli.pressure,Bernoulli.velocity,Bernoulli.density,Bernoulli.aOG);
+	cout << Bernoulli.headLoss << endl;
+
+	Bernoulli.elevation.x = Bernoulli.BernoulliElevation(Bernoulli.elevation,Bernoulli.pressure,Bernoulli.velocity,Bernoulli.density,Bernoulli.aOG,Bernoulli.headLoss);
+	cout << Bernoulli.elevation.x << endl;
+
+	Bernoulli.pressure.x = Bernoulli.BernoulliPressure(Bernoulli.elevation,Bernoulli.pressure,Bernoulli.velocity,Bernoulli.density,Bernoulli.aOG,Bernoulli.headLoss);
+	cout << Bernoulli.pressure.x << endl;
+
+
 }
