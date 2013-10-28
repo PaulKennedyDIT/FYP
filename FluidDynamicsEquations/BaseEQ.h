@@ -17,10 +17,12 @@ public:
 
 	
 
+	float PressureMinus(float pressureP1, float pressureP2);
+	float VelocitySquaredMinus(float v1, float v2,int power);
 
 	float BernoulliHeadLoss(glm::vec2 elevation, glm::vec2 pressure,glm::vec2 velocity,float density,float aOG);
 	float BernoulliElevation(glm::vec2 elevation, glm::vec2 pressure, glm::vec2 velocity, float density, float aOG,float headloss);
 	float BernoulliPressure(glm::vec2 elevation, glm::vec2 pressure, glm::vec2 velocity, float density, float aOG,float headloss);
-	double BernoulliVelocity(glm::vec2 elevation, glm::vec2 pressure, glm::vec2 velocity, float density, float aOG,float headloss);
+	double BernoulliVelocity(glm::vec2 elevation, glm::vec2 pressure, glm::vec2 velocity, float density, float aOG,float headloss);	
 };
 
